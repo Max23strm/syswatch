@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=My Product
+Comment=A monitorRecursos_ application
+# The Exec line includes %u to pass the URL to the application
+Exec=/usr/local/bin/monitorrecursos_.exe %u
+Terminal=false
+Type=Application
+Icon=monitorrecursos_.exe
+Categories=Utility;
+StartupWMClass=monitorrecursos_.exe
+
+ 
