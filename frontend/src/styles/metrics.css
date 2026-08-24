@@ -1,0 +1,93 @@
+.metrics_container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.metrics_container .cpu_container, .metrics_container .disk_container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border: 2px solid var(--secondary);
+    border-radius: 20px;
+}
+
+.metrics_container .cpu_container .cpu_main_number_container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: flex-end;
+}
+.metrics_container .cpu_container .cpu_main_number_container .main_number {
+    font-size: 4rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--accent1);
+}
+.metrics_container .cpu_container .cpu_main_number_container:not(.main_number)  {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--secondary);
+}
+
+.metrics_container .cpu_container h5, .metrics_container .disk_container h5 {
+    font-size: 1.2rem;
+    margin: 0;
+    text-transform: uppercase;
+    color: var(--secondary);
+}
+.metrics_container .disk_container .disk_data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.metrics_container .disk_container .disk_data .disk_data_element_amount {
+    display: flex;
+    flex-direction: row;
+}
+.metrics_container .disk_container .disk_data .disk_data_element_amount:not(.main_number) {
+    text-transform: uppercase;
+    color: var(--secondary);
+
+}
+
+.metrics_container .disk_container .disk_data_element .disk_data_element_amount .main_number {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--accent1);
+}
+
+.metrics_container .disk_container .disk_data_element h6 {
+    font-size: 1rem;
+    margin: 0;
+    text-transform: uppercase;
+    color: var(--secondary);
+}
+.metrics_container .disk_container .disk_extra_data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: .5rem;
+}
+.metrics_container .disk_container .disk_extra_data div {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: .5rem;
+}
+.metrics_container .disk_container .disk_extra_data div p {
+    text-transform: uppercase;
+    line-height: 1rem;
+    margin: 0;
+    font-size: .8rem;
+}
+.metrics_container .disk_container .disk_extra_data div .number {
+    font-size: 1.1rem;
+    color: var(--accent1);
+}
+.metrics_container .disk_container .disk_extra_data div .unit {
+    margin-left: -.5rem;
+}

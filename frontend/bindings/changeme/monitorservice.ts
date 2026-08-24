@@ -8,6 +8,12 @@ import { Call as $Call, CancellablePromise as $CancellablePromise } from "@wails
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: Unused imports
 import * as disk$0 from "../github.com/shirou/gopsutil/v4/disk/models.js";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore: Unused imports
+import * as mem$0 from "../github.com/shirou/gopsutil/v4/mem/models.js";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore: Unused imports
+import * as net$0 from "../github.com/shirou/gopsutil/v4/net/models.js";
 
 export function GetCpuPerc(): $CancellablePromise<number[] | null> {
     return $Call.ByID(2829539297);
@@ -15,4 +21,12 @@ export function GetCpuPerc(): $CancellablePromise<number[] | null> {
 
 export function GetDiskUsage(): $CancellablePromise<disk$0.UsageStat | null> {
     return $Call.ByID(3356686475);
+}
+
+export function GetNetworkData(): $CancellablePromise<net$0.IOCountersStat[] | null> {
+    return $Call.ByID(1953189925);
+}
+
+export function GetRamUsage(): $CancellablePromise<mem$0.VirtualMemoryStat | null> {
+    return $Call.ByID(626905826);
 }
