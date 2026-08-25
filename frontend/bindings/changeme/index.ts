@@ -5,3 +5,7 @@ import * as MonitorService from "./monitorservice.js";
 export {
     MonitorService
 };
+
+export type {
+    NetSpeed
+} from "./models.js";

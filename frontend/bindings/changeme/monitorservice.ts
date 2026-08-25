@@ -15,6 +15,10 @@ import * as mem$0 from "../github.com/shirou/gopsutil/v4/mem/models.js";
 // @ts-ignore: Unused imports
 import * as net$0 from "../github.com/shirou/gopsutil/v4/net/models.js";
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore: Unused imports
+import * as $models from "./models.js";
+
 export function GetCpuPerc(): $CancellablePromise<number[] | null> {
     return $Call.ByID(2829539297);
 }
@@ -23,8 +27,22 @@ export function GetDiskUsage(): $CancellablePromise<disk$0.UsageStat | null> {
     return $Call.ByID(3356686475);
 }
 
+/**
+ * GetNetworkData devuelve los contadores crudos (acumulativos) por interfaz.
+ * Se mantiene por si la necesitas para otros fines (totales históricos, etc).
+ */
 export function GetNetworkData(): $CancellablePromise<net$0.IOCountersStat[] | null> {
     return $Call.ByID(1953189925);
+}
+
+/**
+ * GetNetworkSpeed devuelve la velocidad de red (bytes/segundo) por interfaz,
+ * calculada como delta entre esta lectura y la anterior.
+ * En la primera llamada devuelve una lista vacía, ya que no hay lectura previa
+ * con la cual calcular el delta.
+ */
+export function GetNetworkSpeed(): $CancellablePromise<$models.NetSpeed[] | null> {
+    return $Call.ByID(2207590400);
 }
 
 export function GetRamUsage(): $CancellablePromise<mem$0.VirtualMemoryStat | null> {

@@ -38,7 +38,7 @@ func main() {
 		Name:        "SysWatch",
 		Description: "System monitor",
 		Services: []application.Service{
-			application.NewService(&MonitorService{}),
+			application.NewService(NewMonitorService()),
 		},
 		Assets: application.AssetOptions{
 			Handler: application.AssetFileServerFS(assets),
