@@ -9,3 +9,10 @@ build/ios/xcode/overlay.json
 build/ios/xcode/gen/
 build/android/overlay.json
 build/android/gen/
+
+mockup.png
+requerimientos.md
+
+
+src/routeTree.gen.ts
+frontend/src/routeTree.gen.ts

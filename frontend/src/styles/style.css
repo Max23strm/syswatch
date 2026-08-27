@@ -1,67 +1,316 @@
 :root {
-    --primary: #f0e6ca;
-    --secondary: #211316;
-    --accent1: #f18807;
-    --accent2: #3998a7;
+   /* ---------------------------------------------------------
+     BRAND
+     --------------------------------------------------------- */
+   --cometa-orange: #ef8e21;
+   --cometa-orange-hover: #f5a044;
+   --cometa-orange-active: #d97b12;
+   --cometa-orange-soft: #fff0df;
+
+   --cometa-blue: #3998a7;
+   --cometa-blue-hover: #4fadbc;
+   --cometa-blue-active: #2c7d8a;
+   --cometa-blue-soft: #e5f4f6;
 
 
-    --text: #f4f6fb;
-    --muted: #9aa6c0;
-    --accent: #ff4d4d;         /* Wails red */
-    --accent-2: #ff2d72;       /* pink, used in gradients */
-    --glass: rgba(255, 255, 255, 0.05);
-    --glass-strong: rgba(255, 255, 255, 0.08);
-    --glass-border: rgba(255, 255, 255, 0.12);
-    --radius: 11px;
-    --grad: linear-gradient(135deg, #ff5a4d 0%, #ff2d72 100%);
+   /* ---------------------------------------------------------
+LIGHT THEME — brochure / real-estate neutral
+--------------------------------------------------------- */
 
-    /* Golden-ratio spacing scale (φ ≈ 1.618), used for the vertical rhythm. */
-    --s-1: 0.618rem;   /* φ⁻¹ */
-    --s-2: 1rem;
-    --s-3: 1.618rem;   /* φ   */
-    --s-4: 2.618rem;   /* φ²  */
-    --s-5: 4.236rem;   /* φ³  */
+   --bg-primary: #f5f4f0;
+   --bg-secondary: #e8e6e0;
+   --surface: #ffffff;
+   --surface-elevated: #faf9f6;
+   --surface-muted: #eeece7;
 
-    font-family: "Anta", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-        sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; */
-    color-scheme: dark;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
+   --text-primary: #0d0e12;
+   --text-secondary: #686d76;
+   --text-muted: #9298a1;
+   --text-inverse: #ffffff;
+
+   --border-subtle: #e0ded8;
+   --border-default: #d1d0cb;
+   --border-strong: #b9bcc2;
+
+   /* ---------------------------------------------------------
+     METALLIC / COLD SUPPORT
+     --------------------------------------------------------- */
+   --metal-silver: #c4c9d1;
+   --metal-cool: #a7adb8;
+   --metal-dark: #686f7b;
+
+   /* ---------------------------------------------------------
+     SEMANTIC COLORS
+     Keep them restrained — orange remains the brand accent.
+     --------------------------------------------------------- */
+   --success: #258a58;
+   --success-soft: #e5f4eb;
+
+   --warning: #ef8e21;
+   --warning-soft: #fff0df;
+
+   --danger: #c9362b;
+   --danger-soft: #fde9e7;
+
+   --info: #4d718d;
+   --info-soft: #e8f0f5;
+
+   /* ---------------------------------------------------------
+     DARK / SPACE THEME
+     --------------------------------------------------------- */
+   --dark-bg: #0d0e12;
+   --dark-surface: #14161b;
+   --dark-surface-elevated: #1a1d23;
+   --dark-surface-muted: #20242b;
+
+   --dark-text: #f3f2ee;
+   --dark-text-secondary: #a8adb6;
+   --dark-text-muted: #747a84;
+
+   --dark-border: #2a2e36;
+   --dark-border-strong: #3b4049;
+
+   /* ---------------------------------------------------------
+     TYPOGRAPHY
+     --------------------------------------------------------- */
+   --font-display: "Orbitron", "Eurostile", "Century Gothic", Arial, sans-serif;
+   --font-body: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+   --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+   --font-weight-regular: 400;
+   --font-weight-medium: 500;
+   --font-weight-semibold: 600;
+   --font-weight-bold: 700;
+   --font-weight-black: 800;
+
+   --text-xs: 0.6875rem;
+   /* 11px */
+   --text-sm: 0.75rem;
+   /* 12px */
+   --text-md: 0.875rem;
+   /* 14px */
+   --text-lg: 1rem;
+   /* 16px */
+   --text-xl: 1.25rem;
+   /* 20px */
+   --text-2xl: 2rem;
+   /* 32px */
+   --text-3xl: 3rem;
+   /* 48px */
+
+   --line-tight: 1.05;
+   --line-normal: 1.4;
+   --line-relaxed: 1.6;
+
+   /* ---------------------------------------------------------
+     SPACING
+     --------------------------------------------------------- */
+   --space-1: 4px;
+   --space-2: 8px;
+   --space-3: 12px;
+   --space-4: 16px;
+   --space-5: 24px;
+   --space-6: 32px;
+   --space-7: 48px;
+   --space-8: 64px;
+   --space-9: 96px;
+
+   /* ---------------------------------------------------------
+     LAYOUT
+     --------------------------------------------------------- */
+   --sidebar-width: 232px;
+   --header-height: 64px;
+   --content-max-width: 1600px;
+   --content-padding: 32px;
+
+   /* ---------------------------------------------------------
+     BORDERS / RADII
+     Corporate UI stays mostly rectangular.
+     --------------------------------------------------------- */
+   --radius-sm: 3px;
+   --radius-md: 6px;
+   --radius-lg: 10px;
+   --radius-xl: 14px;
+   --radius-pill: 999px;
+
+   --border-1: 1px;
+   --border-2: 2px;
+
+   /* ---------------------------------------------------------
+     SHADOWS
+     Very restrained — avoid "consumer app" softness.
+     --------------------------------------------------------- */
+   --shadow-sm: 0 1px 2px rgba(13, 14, 18, 0.04);
+   --shadow-md: 0 4px 12px rgba(13, 14, 18, 0.08);
+   --shadow-lg: 0 12px 32px rgba(13, 14, 18, 0.12);
+   --shadow-dark: 0 12px 32px rgba(0, 0, 0, 0.28);
+
+   /* ---------------------------------------------------------
+     MOTION
+     --------------------------------------------------------- */
+   --duration-fast: 120ms;
+   --duration-normal: 200ms;
+   --duration-slow: 320ms;
+
+   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+   --ease-emphasis: cubic-bezier(0.16, 1, 0.3, 1);
+
+   /* ---------------------------------------------------------
+     CHARTS
+     --------------------------------------------------------- */
+   --chart-primary: var(--cometa-orange);
+   --chart-secondary: var(--metal-cool);
+   --chart-grid: #deddd8;
+   --chart-fill: rgba(239, 142, 33, 0.12);
+
+   /* ---------------------------------------------------------
+     ORBITAL DECORATION
+     --------------------------------------------------------- */
+   --orbit-line: rgba(196, 201, 209, 0.5);
+   --orbit-dot: var(--cometa-orange);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --secondary: #f0e6ca;
     --primary: #211316;
   }
-}
+} */
 
-* { box-sizing: border-box; }
+* {
+   box-sizing: border-box;
+}
 
 html {
-    background: var(--primary);
+   background: var(--bg-primary);
+   margin: 10px;
 }
-html, body {
-    margin: 10px;
-    color: var(--secondary);
-}
-
 
 body {
-    overflow-x: hidden;
-    /* Nothing in the chrome is selectable (it's an app, not a document); the
+   margin: 0;
+   min-width: 960px;
+   background: var(--bg-primary);
+   color: var(--text-primary);
+   font-family: var(--font-body);
+   font-size: var(--text-md);
+   line-height: var(--line-normal);
+   -webkit-font-smoothing: antialiased;
+   text-rendering: optimizeLegibility;
+   overflow-x: hidden;
+   /* Nothing in the chrome is selectable (it's an app, not a document); the
        text input opts back in below. */
-    -webkit-user-select: none;
-    user-select: none;
-    /* Drag the window by its background. Interactive controls opt out with
+   -webkit-user-select: none;
+   user-select: none;
+   /* Drag the window by its background. Interactive controls opt out with
        --wails-draggable: no-drag (the property inherits). */
-    --wails-draggable: drag;
+   --wails-draggable: drag;
+}
+
+button,
+input,
+select,
+textarea {
+   font: inherit;
+}
+
+button {
+   cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   margin: 0;
+   font-family: var(--font-display);
+   font-weight: var(--font-weight-bold);
+   line-height: var(--line-tight);
+   letter-spacing: -0.02em;
+   text-transform: uppercase;
+}
+
+h1 {
+   font-size: var(--text-3xl);
+}
+
+h2 {
+   font-size: var(--text-2xl);
+}
+
+h3 {
+   font-size: var(--text-xl);
+}
+
+.btn {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   gap: var(--space-2);
+   min-height: 38px;
+   padding: 0 var(--space-4);
+   border: var(--border-1) solid transparent;
+   border-radius: var(--radius-sm);
+   font-family: var(--font-body);
+   font-size: var(--text-sm);
+   font-weight: var(--font-weight-bold);
+   line-height: 1;
+   letter-spacing: 0.04em;
+   text-transform: uppercase;
+   transition:
+      background var(--duration-fast) var(--ease-standard),
+      border-color var(--duration-fast) var(--ease-standard),
+      color var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard);
+}
+
+.btn:active {
+   transform: translateY(1px);
+}
+
+.btn--primary {
+   background: var(--cometa-orange);
+   color: #0d0e12;
+   border-color: var(--cometa-orange);
+}
+
+.btn--primary:hover {
+   background: var(--cometa-orange-hover);
+   border-color: var(--cometa-orange-hover);
+}
+
+.btn--secondary {
+   background: var(--cometa-blue);
+   color: var(--text-primary);
+   border-color: var(--cometa-blue);
+}
+
+.btn--secondary:hover {
+   border-color: var(--cometa-blue-hover);
+   color: var(--cometa-blue-hover);
+}
+
+.btn--ghost {
+   background: transparent;
+   color: var(--text-secondary);
+   border-color: transparent;
+}
+
+.btn--ghost:hover {
+   color: var(--cometa-orange);
+   background: var(--surface-muted);
+}
+
+.btn--danger {
+   background: var(--danger);
+   color: #ffffff;
+   border-color: var(--danger);
 }
 
 /* Framework mount nodes (#app / #root) shouldn't affect layout, so the
    body flex centering applies directly to .container. */
-#app, #root { display: contents; }
+#app,
+#root {
+   display: contents;
+}

@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import wails from "@wailsio/runtime/plugins/vite";
-import react from "@vitejs/plugin-react"
+import react from "@vitejs/plugin-react";
+import { tanstackRouter } from "@tanstack/router-plugin/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,6 +11,8 @@ export default defineConfig({
     strictPort: true,
   },
   plugins: [
+    tanstackRouter({ target: "react", autoCodeSplitting: true }),
     react(),
-    wails("./bindings")],
+    wails("./bindings"),
+  ],
 });
