@@ -23,7 +23,6 @@ const Network = () => {
     const getP = async () => {
         const data: NetSpeed[] | null = await GetNetworkSpeed();
         setNetUsage(data === null ? null : [...data].filter(n => n.recvBps > 0 || n.sentBps > 0).sort((a, b) => b.recvBps - a.recvBps));
-        console.log(data)
     };
 
     const intervalId = setInterval(getP, intervalTimer);

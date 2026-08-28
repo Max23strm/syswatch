@@ -1,0 +1,109 @@
+.shell{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.shell__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 60px;
+    background-color: var(--dark-surface);
+    height: 100dvh;
+    position: sticky;
+    top: 0;
+    max-width: var(--sidebar-width);
+}
+.shell__sidebar {
+    color:var(--cometa-blue)
+}
+
+.shell__nav {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-right: .3rem;
+    padding-left: .3rem;
+
+}
+.shell__sidebar__button:hover {
+    background-color: var(--dark-surface-elevated);
+}
+.shell__sidebar__button {
+    background-color: transparent;
+    border: 0px;
+    width: 100%;
+    margin-top: 1rem;
+    color:var(--cometa-orange)
+}
+.shell__sidebar__button svg {
+    width: 20px;
+}
+
+/* NavLink */
+.nav_link{
+    display: flex;
+    color: var(--dark-text);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    /* overflow: hidden; */
+}
+.nav_link.open_side{
+    gap: 1rem;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    position: relative;
+}
+
+/* NavLink closed */
+/* .nav_link :not(.open_side) {
+    padding-right: 0px;
+} */
+
+.nav_link svg {
+    width: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: width 0.1s cubic-bezier(0.075, 0.82, 0.165, 1),
+              margin 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.nav_link.open_side svg {
+    width: 20px;
+    margin-left: unset;
+    margin-right: unset;
+}
+
+.nav_link span {
+    display: none;
+    position: absolute;
+    left: 70px;
+    color: var(--cometa-orange);
+    background-color: var(--dark-surface-elevated);
+    padding: .5rem;
+    border-radius: var(--radius-md);
+    width: 0px;
+    opacity: 0;
+    overflow: hidden;
+    transition: width 0.3s ease, display 0.3s ease allow-discrete, opacity 0.2s ease-out;
+}
+.nav_link:hover span {
+    display: block;
+    width: 80px;
+    opacity: 1;
+
+    @starting-style {
+        width: 0;
+        opacity: 0;
+    }
+}
+.nav_link:hover{
+    color: var(--cometa-orange-hover);
+}
+.nav_link--active {
+    color: var(--cometa-orange)
+}

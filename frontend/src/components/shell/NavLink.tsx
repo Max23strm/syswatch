@@ -6,17 +6,18 @@ interface Props {
   to: string;
   icon: ReactNode;
   label: string;
+  key: any
 }
 
 const NavLink = ({ to, icon, label }: Props) => (
-  <Link
-    to={to}
-    activeProps={{ className: "nav_link nav_link--active" }}
-    inactiveProps={{ className: "nav_link" }}
-  >
-    {icon}
-    <span>{label}</span>
-  </Link>
+    <Link
+        to={to}
+        activeProps={{ className: `nav_link nav_link--active` }}
+        inactiveProps={{ className: `nav_link` }}
+    >
+      {icon}
+      <span>{label}</span>
+    </Link>
 );
 
 export default NavLink;
