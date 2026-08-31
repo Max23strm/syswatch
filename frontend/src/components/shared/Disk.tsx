@@ -1,26 +1,7 @@
-import { useState, useEffect, useCallback } from 'react'
-import { GetDiskUsage } from '../../../bindings/changeme/monitorservice'
 import type { UsageStat } from '../../../bindings/github.com/shirou/gopsutil/v4/disk'
 import { bytesToGB } from '../../utils'
 
-const Disk = () => {
-    const [loading, setLoading] = useState<boolean>(true)
-    const [disk, setDisk] = useState<UsageStat>(null)
-
-    
-    const fetchData = useCallback(async () => {
-        setLoading(true)
-        const data: UsageStat | null = await GetDiskUsage()
-        setLoading(false)
-        setDisk(data)
-    },[])
-    
-    useEffect( () => {
-        fetchData()
-    }, [fetchData])
-    
-
-    if(loading) return <div>Loading....</div>
+const Disk = ({disk}: {disk: UsageStat}) => {
 
     return (
         <div className='disk_container'>

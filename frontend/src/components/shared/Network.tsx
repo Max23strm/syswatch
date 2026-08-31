@@ -1,34 +1,9 @@
-import { useState, useEffect} from 'react'
-import { formatSpeed, intervalTimer } from '../../utils';
-import { GetNetworkSpeed } from '../../../bindings/changeme/monitorservice';
-import type { IOCountersStat } from '../../../bindings/github.com/shirou/gopsutil/v4/net';
+import { formatSpeed } from '../../utils';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import type { NetSpeed } from '../../../bindings/changeme';
-const Network = () => {
+const Network = ({netUsage}:{netUsage: NetSpeed[]}) => {
 
-    const [netUsage, setNetUsage] = useState<IOCountersStat[]>([])
     
-    // useEffect(() => {
-    //     const getP = async () => {
-    //         const data: IOCountersStat[] | null = await GetNetworkData()
-    //         setNetUsage(data === null ? null : data.sort((a, b) => b.bytesRecv - a.bytesRecv));
-    //     };
-
-    //     const intervalId = setInterval(getP, intervalTimer);
-
-    //     return () => clearInterval(intervalId);
-    // }, [])
-
-    useEffect(() => {
-    const getP = async () => {
-        const data: NetSpeed[] | null = await GetNetworkSpeed();
-        setNetUsage(data === null ? null : [...data].filter(n => n.recvBps > 0 || n.sentBps > 0).sort((a, b) => b.recvBps - a.recvBps));
-    };
-
-    const intervalId = setInterval(getP, intervalTimer);
-    return () => clearInterval(intervalId);
-}, []);
-
     return (
         <div className='network_container'>
             <h5> Network </h5>
