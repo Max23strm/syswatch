@@ -71,7 +71,6 @@ const CpuChart = ({ cpuStats }: { cpuStats: readonly number[] }) => {
             hostRef.current = null;
         };
     }, []);
-
     useEffect(() => {
         const host = hostRef.current;
             if (!host || cpuStats.length === 0) {

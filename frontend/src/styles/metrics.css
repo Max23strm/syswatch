@@ -4,8 +4,8 @@
     gap: 1rem;
 }
 
-
 .metrics_container .cpu_container, .metrics_container .disk_container, .metrics_container .ram_container, .metrics_container .network_container {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     padding: 2rem;
@@ -19,18 +19,18 @@
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    justify-content: space-between;
+    /* max-width: 615px; */
+    /* justify-content: space-between; */
 }
 .metrics_container .cpu_container .cpu_numbers{
     min-width: 400px;
 }
 
 .metrics_container .cpu_container .cpu_chart{
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
-    aspect-ratio: 16/9;
-    /* max-width: 700px;   */
-    /* min-width: 280px;   */
+    max-height: 100px;
+    aspect-ratio: 16/14;
 }
 
 .metrics_container .cpu_container:hover, .metrics_container .disk_container:hover, .metrics_container .ram_container:hover, .metrics_container .network_container:hover {
@@ -69,12 +69,6 @@
 .metrics_container .cpu_numbers .cpu_container h5{
     margin-top: 1rem;
     margin-bottom: 0;
-}
-
-.metrics_container .cpu_numbers .cpu_container .cpu_chart {
-    width: 100%;
-    height: 360px;
-    margin-top: 1rem;
 }
 
 .cpu_container h5, .metrics_container .disk_container h5, .metrics_container .ram_container h5, .metrics_container .network_container h5 {
@@ -178,6 +172,15 @@
 .metrics_container .ram_container .ram_total span  {
     color: var(--accent1);
 }
+.metrics_container .network_container .network_title {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.metrics_container .network_container .network_title h5 {
+    font-size: 1.2rem;
+
+}
 .metrics_container .network_container .nets_elements {
     display: grid;
     grid-template-columns: 1fr;
@@ -196,7 +199,6 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    gap: .5rem;
     font-size: .8rem;
     margin: 0;
 }
@@ -249,12 +251,17 @@
     }
 
     .metrics_container .cpu_container{
-        grid-column: 1 / 3;
+        grid-column: 1 / 2;
         grid-row: 1;
     }
 
     .metrics_container .network_container{
-        grid-column: 1/3;
+        grid-column: 1/2;
         grid-row: 2;
     }
+}
+
+@media screen and (min-width: 650px) {
+
+
 }

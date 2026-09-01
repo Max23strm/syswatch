@@ -41,9 +41,9 @@ const OverviewDashboard = () => {
   return (
       <div className="metrics_container">
           <Cpu cpuPerc={computerSTATS.cpuPerc} />
+          <Network netUsage={computerSTATS.netSpeed}/>
           <Disk disk={computerSTATS.disk}/>
           <Ram ramUsage={computerSTATS.ram}/>
-          <Network netUsage={computerSTATS.netSpeed}/>
       </div>
   );
 };

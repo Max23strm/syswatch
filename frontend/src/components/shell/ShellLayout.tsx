@@ -16,7 +16,7 @@ const items = [
   // { to: "/ram", icon: <MemoryStick size={"auto"} />, label: "RAM" },
   // { to: "/disk", icon: <HardDrive size={"auto"} />, label: "Disco" },
   // { to: "/network", icon: <NetIcon size={"auto"} />, label: "Red" },
-  { to: "/settings", icon: <Settings size={"auto"} />, label: "Ajustes" },
+  // { to: "/settings", icon: <Settings size={"auto"} />, label: "Ajustes" },
 ];
 
 const ShellLayout = () => {

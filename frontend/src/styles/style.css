@@ -197,6 +197,7 @@ body {
    -webkit-font-smoothing: antialiased;
    text-rendering: optimizeLegibility;
    overflow-x: hidden;
+   flex: 1;
    /* Nothing in the chrome is selectable (it's an app, not a document); the
        text input opts back in below. */
    -webkit-user-select: none;
